@@ -1,0 +1,21 @@
+{
+	"name": "html-mutant",
+	"version": "0.0.1",
+	"description": "L’invasion du HTML mutant",
+	"license": "GPL-3.0",
+	"author": {
+		"name": "Gaël Poupard",
+		"url": "https://www.ffoodd.fr",
+		"email": "gael+npm@ffoodd.fr"
+	},
+	"files": [
+		"./jeu/"
+	],
+	"main": "jeu/index.html",
+	"scripts": {
+		"start": "servor ./jeu --browse --reload --static --silent"
+	},
+	"devDependencies": {
+		"servor": "^4.0.2"
+	}
+}

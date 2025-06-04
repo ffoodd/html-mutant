@@ -19,7 +19,6 @@ class CodeRunner extends HTMLElement {
 			this.closest('section')?.id?.split('-')[1] ||
 			document.querySelector('h1')?.innerText?.split(' ')[1]?.split('\n')[0];
 
-
 		['options', 'condition', 'fonction']
 			.map(field => {
 				const value = localStorage.getItem(`${this.level}-${field}`);
@@ -27,6 +26,12 @@ class CodeRunner extends HTMLElement {
 					this.form[field].value = value;
 				}
 			});
+	}
+
+	disconnectedCallback() {
+		this.form.removeEventListener('submit', this);
+		window.removeEventListener('error', this);
+		document.removeEventListener('beforeunload', this);
 	}
 
 	handleEvent(event) {
